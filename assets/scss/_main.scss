@@ -36,14 +36,13 @@
         text-transform: uppercase;
     }
     &__button{
-        width: fit-content;
         margin-top: 1rem;
         border-radius: .5rem;
         background-color: #262e33;
         color: $white ;
         padding: 1rem;
         font-weight: 800;
-        width: 100%;
+        width: fit-content;  //100%;
         &:hover{
             background-color: #151a1d;
         }
@@ -52,5 +51,12 @@
         width: 100%;
         text-align: center;
     }
+}
+.green::before{
+    color: #2ecc71; // #93faa5;
+}
+
+.red::before{
+    color: #f22613; // #;
 }
 

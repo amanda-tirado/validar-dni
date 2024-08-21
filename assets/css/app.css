@@ -247,16 +247,15 @@ body {
   text-transform: uppercase;
 }
 .main__button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   margin-top: 1rem;
   border-radius: 0.5rem;
   background-color: #262e33;
   color: aliceblue;
   padding: 1rem;
   font-weight: 800;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .main__button:hover {
   background-color: #151a1d;
@@ -264,6 +263,14 @@ body {
 .main__result {
   width: 100%;
   text-align: center;
+}
+
+.green::before {
+  color: #2ecc71;
+}
+
+.red::before {
+  color: #f22613;
 }
 
 /* FOOTER */
@@ -375,7 +382,7 @@ body {
   color: #f66f78;
 }
 .footer__email {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
 }
 .footer__email:hover {

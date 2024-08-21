@@ -33,11 +33,11 @@ function validate() {
     if (valorLetter === siSoy) {
         console.log('DNI correcto');
         //pintaMe('El DNI es correcto');
-        pintaMe('DNI correcto para el número ' + valorNumber, 'bi-check-all'); // Ícono de éxito
+        pintaMe('El DNI con número ' + valorNumber + ' y letra ' + valorLetter + ' es válido', 'bi-check-all green'); // Ícono de éxito
     } else {
         console.log('DNI incorrecto');
         //pintaMe('DNI incorrecto');
-        pintaMe('DNI incorrecto para el número ' + valorNumber, 'bi-ban'); // Ícono de error
+        pintaMe('El DNI con número ' + valorNumber + ' y letra ' + valorLetter + ' no es válido', 'bi-exclamation-triangle red'); // Ícono de error
     }
     
     function pintaMe(mensaje, icono) {
