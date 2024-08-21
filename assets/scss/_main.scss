@@ -10,7 +10,9 @@
         @include flexible (column, nowrap, center, center );
         border-radius: 1rem;
     }
-    &__box{}
+    &__box{
+        @include flexible (column, nowrap, center, center);
+    }
     &__h1{
         color: #262e33;
         margin-bottom: 1rem;
@@ -23,13 +25,16 @@
         border-radius: .5rem;
         width: 100%;
         color: #262e33;
+        width: fit-content;
         &:focus-visible{
             outline: #262e33 auto 1px;
         }
     }
     &__input.letra{
+        text-transform: uppercase;
     }
     &__button{
+        width: fit-content;
         margin-top: 1rem;
         border-radius: .5rem;
         background-color: #262e33;
@@ -40,6 +45,10 @@
         &:hover{
             background-color: #151a1d;
         }
+    }
+    &__result{
+        width: 100%;
+        text-align: center;
     }
 }
 

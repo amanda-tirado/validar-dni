@@ -1,60 +1,46 @@
-'use strict'
-function tryMe(){
-    let nodoNumber = document.querySelector( '#number' );
-    console.log(nodoNumber);
-    let valorNumber = nodoNumber.value;
-    console.log(valorNumber);
-    let nodoLetter = document.querySelector( '#letter' );
-    console.log(nodoLetter);
-    let valorLetter = nodoLetter.value;
-    console.log(valorLetter);
+'use strict';
+
+function validate() {
+    let nodoNumber = document.querySelector('#number');
+    let valorNumber = parseInt(nodoNumber.value, 10); // Convierte a entero
+    let nodoLetter = document.querySelector('#letter');
+    let valorLetter = nodoLetter.value.toUpperCase(); // Convierte a mayúsculas
     let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
-    console.log('numero de valores en letras', letras.length );
-    let que_letra_soy = valorNumber % 23;
-    let dni_completo = valorNumber + valorLetter;
-    console.log( dni_completo );
-    let siSoy = letras[ que_letra_soy ]; // LETRA CORRECTA
-    let nodoResult = document.querySelector( '#result' );
-
-    if( valorNumber < 0 ||valorNumber > 99999999 & valorLetter !== ''){
-        console.log('el número proporcionado no es válido.');
-    }else if( valorLetter === siSoy ){
-            console.log('result');
-            pintaMe( 'letras[que_letra_soy]' );
-    }else{
-        pintaMe('Error');
-    }
-
-    function pintaMe( letra ){
-        nodoResult.innerHTML = '<span>' + letra + '</span>'
-    }  
-    for( let i = 0; i < letras.length;  i++){    
-        if( i === que_letra_soy ){
-            // letras[ i ] -> Correcta
-            if(  letras[i] === valorLetter ){
-                // ES CORRECTO
-            }
-        }
-        // letras[ i ] = letras[ que_letra_soy];
-        console.log(siSoy);
-        if( letras[que_letra_soy] === letras[ i ] ){
-            console.log('result');
-            pintaMe( 'letras[que_letra_soy]' );
-        }else{
-            pintaMe('Error');
-        }
-    }    
-}
     
-    // let numero_dni = ;
-    // let DNI = numero_dni + letras[ x ];
-
-/*
-No es lo mismo dividir que %:
-numero_dni / 23 ≠ numero_dni % 23; 
-COCIENTE
- numero_dni % 23; RESTO
-*/
-
-
-// RESTO = que_letra_soy
+    // Imprime valores para depuración
+    console.log('Número:', valorNumber);
+    console.log('Letra:', valorLetter);
+    
+    // Validación del número de DNI
+    if (isNaN(valorNumber) || valorNumber < 0 || valorNumber > 99999999) {
+        console.log('El número proporcionado no es válido.');
+        pintaMe('Número no válido');
+        return;
+    }
+    
+    // Validación de la letra
+    if (valorLetter === '') {
+        console.log('La letra del DNI no puede estar vacía.');
+        pintaMe('Letra vacía');
+        return;
+    }
+    
+    // Cálculo de la letra correcta
+    let que_letra_soy = valorNumber % 23;
+    let siSoy = letras[que_letra_soy];
+    
+    // Comparación de la letra proporcionada
+    if (valorLetter === siSoy) {
+        console.log('DNI correcto');
+        //pintaMe('El DNI es correcto');
+        pintaMe('DNI correcto para el número ' + valorNumber, 'bi-check-all'); // Ícono de éxito
+    } else {
+        console.log('DNI incorrecto');
+        //pintaMe('DNI incorrecto');
+        pintaMe('DNI incorrecto para el número ' + valorNumber, 'bi-ban'); // Ícono de error
+    }
+    
+    function pintaMe(mensaje, icono) {
+        document.querySelector('#result').innerHTML = '<span><i class="bi ' + icono + '"></i> ' + mensaje + '</span>';
+    }
+}
