@@ -1,9 +1,13 @@
 'use strict'
 function tryMe(){
     let nodoNumber = document.querySelector( '#number' );
+    console.log(nodoNumber);
     let valorNumber = nodoNumber.value;
+    console.log(valorNumber);
     let nodoLetter = document.querySelector( '#letter' );
+    console.log(nodoLetter);
     let valorLetter = nodoLetter.value;
+    console.log(valorLetter);
     let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'];
     console.log('numero de valores en letras', letras.length );
     let que_letra_soy = valorNumber % 23;
@@ -20,24 +24,24 @@ function tryMe(){
     }else{
         pintaMe('Error');
     }
+
     function pintaMe( letra ){
         nodoResult.innerHTML = '<span>' + letra + '</span>'
-        }  
-        for( let i = 0; i < letras.length;  i++){    
-            if( i === que_letra_soy ){
-                // letras[ i ] -> Correcta
-                if(  letras[i] === valorLetter ){
-                    // ES CORRECTO
-                }
+    }  
+    for( let i = 0; i < letras.length;  i++){    
+        if( i === que_letra_soy ){
+            // letras[ i ] -> Correcta
+            if(  letras[i] === valorLetter ){
+                // ES CORRECTO
             }
-            // letras[ i ] = letras[ que_letra_soy];
-            console.log(siSoy);
-            if( letras[que_letra_soy] === letras[ i ] ){
-                console.log('result');
-                pintaMe( 'letras[que_letra_soy]' );
-            }else{
-                pintaMe('Error');
-            }
+        }
+        // letras[ i ] = letras[ que_letra_soy];
+        console.log(siSoy);
+        if( letras[que_letra_soy] === letras[ i ] ){
+            console.log('result');
+            pintaMe( 'letras[que_letra_soy]' );
+        }else{
+            pintaMe('Error');
         }
     }    
 }

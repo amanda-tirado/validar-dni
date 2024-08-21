@@ -1,0 +1,25 @@
+@import '_mixins';
+
+.header{
+    width: 95%;
+    margin: auto;
+    @include flexible(row, nowrap, center, flex-start); // Alinea los ítems en el centro verticalmente
+    &__h1{
+        //width: 30%;
+        @include flexible (row, nowrap, center, flex-end);
+        gap: .5rem;
+    }
+    &__img{
+        width: 40px;
+        height: 40px;
+        display: block;
+        align-self: baseline; // Alinea la imagen al baseline del texto    
+    }
+    &__p{
+        font-size: 32px;
+        color: $blacky;
+    }
+    // &__menu{
+    //     width: 70%;
+    // }
+}
