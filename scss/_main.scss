@@ -1,0 +1,40 @@
+@import '_mixins';
+.main{
+    min-height: 100vh;
+    background-color: #748b97;
+    @include flexible (row, nowrap, center, center );
+    &__wrapper{
+        padding: 2rem;
+        background-color: aliceblue;
+        @include flexible (column, nowrap, center, center );
+        border-radius: 1rem;
+    }
+    &__box{}
+    &__h1{
+        color: #262e33;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    &__input{
+        padding:.5rem 1rem;
+        margin-top: 1rem;
+        background-color: white;
+        border-radius: .5rem;
+        width: 100%;
+        color: #262e33;
+        margin-right: 2rem;
+    }
+    &__input.letra{
+    }
+    &__button{
+        margin-top: 1rem;
+        border-radius: .5rem;
+        background-color: #262e33;
+        color: aliceblue;
+        padding: 1rem;
+        font-weight: 800;
+        width: 100%;
+    }
+}
+
