@@ -226,6 +226,8 @@ body {
   color: #262e33;
   margin-bottom: 1rem;
   font-size: 1.2rem;
+  text-wrap: balance;
+  text-align: center;
 }
 .main__input {
   padding: 0.5rem 1rem;
